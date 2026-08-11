@@ -29,7 +29,7 @@ Ai/
 ### 1. Clone or Open Workspace Directory
 Ensure you are in the project root directory:
 ```bash
-cd /run/media/moayad/19236c27-eb0e-4c6d-987b-16bf6f3051141/Ai
+cd Sign-Language-Recognition
 ```
 
 ### 2. Create and Activate Virtual Environment
