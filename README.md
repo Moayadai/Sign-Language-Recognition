@@ -103,16 +103,19 @@ The app opens the webcam, loads the trained model, predicts the current gesture,
 To ensure gesture recognition is robust to hand position and distance from the camera:
 
 1. Origin Translation: The wrist landmark coordinate $(x_0, y_0, z_0)$ is subtracted from all 21 hand landmarks:
-   $$
-   x_{rel} = x_i - x_0, \quad y_{rel} = y_i - y_0, \quad z_{rel} = z_i - z_0
-   $$
+
+$$
+x_{rel} = x_i - x_0, \quad y_{rel} = y_i - y_0, \quad z_{rel} = z_i - z_0
+$$
 
 2. Scale Normalization: All relative coordinates are scaled by the maximum Euclidean distance from the wrist:
-   $$
-   D_{max} = \max_i \sqrt{x_{rel}^2 + y_{rel}^2 + z_{rel}^2}
-   $$
-   $$
-   x_{norm} = \frac{x_{rel}}{D_{max}}, \quad y_{norm} = \frac{y_{rel}}{D_{max}}, \quad z_{norm} = \frac{z_{rel}}{D_{max}}
-   $$
+
+$$
+D_{max} = \max_i \sqrt{x_{rel}^2 + y_{rel}^2 + z_{rel}^2}
+$$
+
+$$
+x_{norm} = \frac{x_{rel}}{D_{max}}, \quad y_{norm} = \frac{y_{rel}}{D_{max}}, \quad z_{norm} = \frac{z_{rel}}{D_{max}}
+$$
 
 This produces a 63-dimensional feature vector that is invariant to translation and scale.
